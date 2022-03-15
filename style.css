@@ -1,0 +1,49 @@
+.header{
+    padding: auto;
+    text-align: center;
+    color: black;
+    font-size: 20px;
+    display:block;
+    border-bottom:2px solid black;
+}
+
+.avatar{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+    text-align: center;
+}
+
+#name {
+    border-radius : 8px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: auto;
+    text-align: center;
+}
+
+#submit {
+    font-family: "arial";
+    font-weight: bold;
+    color: deeppink;
+    border : 1px solid pink;
+    border-radius : 12px;
+    background-color :pink;
+    text-shadow: 1px 1px  #000;
+    width: 200px;
+    height: 30px;
+    padding: auto;
+    text-align: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#character {
+    border: 2px solid black;
+    width: 250px;
+    float: left;
+    text-align: center;
+  }

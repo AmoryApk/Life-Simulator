@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css"/>
+        <div class="header">
+            <h1>Mid Exam</h1>
+        <img width="100" src="assets/trophy.jpg"/>
+        </div>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <!-- Bootstrap CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+
+        <!-- My CSS -->
+        <link rel="stylesheet" href="css/style.css">
+
+        <title>UMNLife</title>
+    </head>
+    <body>
+        <script src="js/clock-speedup.js"></script>
+        <div id="character">
+            <h1>Character info</h1>
+            <progress id="foodbar"  value="50"  max="100"></progress>  Food<br>
+            <progress id="playbar"  value="50" max="100"></progress>  Play<br>
+            <progress id="studybar"  value="50" max="100"></progress>  Study<br>
+            <progress id="sleepbar" value="50" max="100"></progress>Sleep</progress><br>
+        
+            <menu id="action">
+                <h1>Actions</h1>
+                <button class="btn btn-primary" onclick="eat();">Makan</button>
+                <div id="foodshow"></div>
+                <button class="btn btn-primary" onclick="main();">Main</button>
+                <div id="playshow"></div>
+                <button class="btn btn-primary" onclick="tidur();">Tidur</button>
+                <div id="sleepshow"></div>
+                <button class="btn btn-primary" onclick="belajar();">Belajar</button>
+                <div id="studyshow"></div>
+            </menu>
+        </div>
+        <p class="timertext" 
+        style="font-size: 1.5rem;">
+        You are idle for
+        <span class="secs"></span> seconds.
+        </p>
+
+        <ul id="recent-times"></ul>
+
+        <script>
+            setInterval(function(){
+                var li = $('<li>').text(new Date().toString());
+                $("#recent-times")
+                    .append(li);
+            },1000);
+
+            var food = document.getElementById("foodbar").value;
+            var sleep = document.getElementById("sleepbar").value;
+            var play = document.getElementById("playbar").value;
+            var study = document.getElementById("studybar").value;
+
+            
+            function eat() {
+                if (food <= 90) {
+                    food += 10;
+                    
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                } else {
+                    alert("You reached the maximum length of the progressbar!")
+                }
+            }
+
+            function belajar() {
+                if (study <= 90) {
+                    study += 10;               
+                    document.getElementById("studybar").value = study;
+                }else if (study > 0 && study < 10) {
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                }  if (food > 0) {
+                    food -= 5;
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }  if (play > 0) {
+                    play -= 5;
+                    document.getElementById("playbar").value = play;
+                } else if (play > 0 && play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                } if (sleep > 0){
+                    sleep -= 5;
+                    document.getElementById("sleepbar").value = sleep;
+                } else if (sleep > 0 && sleep < 10){
+                    sleep == 0;
+                    document.getElementById("sleepbar").value = sleep;
+                }
+              }
+
+
+            function tidur() {
+                if (sleep <= 90) {
+                    sleep += 10;
+                    document.getElementById("sleepbar").value = sleep;
+                }else if (sleep > 0 && sleep < 10) {
+                    sleep == 0;
+                    document.getElementById("sleepbar").value == sleep;
+                }   if (food > 0) {
+                    food -= 5;
+                    document.getElementById("foodbar").value = food;
+                }else if (food > 0 && food < 10){
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }   if (play > 0){
+                    play -= 5;
+                    document.getElementById("playbar").value = play;
+                } else if (play > 0 && play < 10){
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                } if(study <= 90) {
+                    study -= 5;
+                    document.getElementById("studybar").value = study;
+                } else if (study > 0 && study < 10){
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                }
+            }
+
+
+            function main() {
+                if (play <= 90) {
+                    play += 10;               
+                    document.getElementById("playbar").value = play;
+                }else if (play > 0 && play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                }  if (food > 0) {
+                    food -= 5;
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }  if (study > 0) {
+                    study -= 5;
+                    document.getElementById("studybar").value = study;
+                } else if (study > 0 && study < 10) {
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                } if (sleep > 0){
+                    sleep -= 5;
+                    document.getElementById("sleepbar").value = sleep;
+                } else if (sleep > 0 && sleep < 10){
+                    sleep == 0;
+                    document.getElementById("sleepbar").value = sleep;
+                }
+            }
+            
+           
+            let timer, currSeconds = 0;
+  
+            function resetTimer() {
+    
+                /* Hide the timer text */
+                document.querySelector(".timertext")
+                        .style.display = 'none';
+    
+                /* Clear the previous interval */
+                clearInterval(timer);
+    
+                /* Reset the seconds of the timer */
+                currSeconds = 0;
+    
+                /* Set a new interval */
+                timer = 
+                    setInterval(startIdleTimer, 5000);
+            }
+    
+            // Define the events that
+            // would reset the timer
+            window.onload = resetTimer;
+            window.onmousemove = resetTimer;
+            window.onmousedown = resetTimer;
+            window.ontouchstart = resetTimer;
+            window.onclick = resetTimer;
+            window.onkeypress = resetTimer;
+    
+            function startIdleTimer() {
+                
+                /* Increment the
+                    timer seconds */
+                currSeconds++;
+                if (currSeconds % 10 == 0){
+                    play -= 2;               
+                    document.getElementById("playbar").value = play;
+                } else if (play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                }
+                /* Set the timer text
+                    to the new value */
+                document.querySelector(".secs")
+                    .textContent = currSeconds;
+    
+                /* Display the timer text */
+                document.querySelector(".timertext")
+                    .style.display = 'block';
+            }
+            
+        </script>
+    </body>
+</html>

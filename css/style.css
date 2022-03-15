@@ -1,0 +1,82 @@
+.bd-placeholder-img {
+    font-size: 1.125rem;
+    text-anchor: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+@media (min-width: 768px) {
+    .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+    }
+}
+
+/*
+* Globals
+*/
+
+/*
+* Base structure
+*/
+
+.cover-container {
+    max-width: 42em;
+}
+
+/*
+* Header
+*/
+
+.mb-auto {
+    margin-bottom: auto;
+}
+
+.float-mb-start {
+    float: left;
+    margin-bottom: auto;
+}
+
+main {
+    margin-top: 3rem;
+}
+
+main .px-3 {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.col-md-6 {
+    margin-bottom: 1rem;
+}
+
+.card {
+    margin-bottom: 1rem;
+}
+
+.card-body {
+    padding: 1rem;
+}
+
+.form-group {
+    margin-bottom: 0.5rem;
+}
+
+.btn-group {
+    margin-bottom: 0.5rem;
+}
+
+label .btn {
+    font-size: 0.8rem;
+}
+
+.btn-secondary {
+    background-color: #f8f9fa;
+    border-color: #f8f9fa;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    border-color: #007bff;
+}
