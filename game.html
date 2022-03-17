@@ -49,6 +49,7 @@
         </p>
 
         <ul id="recent-times"></ul>
+        <label id="lblGreetings"></label>
         
 
         <script>
@@ -58,7 +59,27 @@
             let mm = date.getMinutes();
             let ss = date.getSeconds();
             let session = "AM";
+            var hrs = date.getHours();
+            var greet;
+            if (document.body) {
+            if (7 <= hh && hh < 20) {
+                document.body.background = "http://itsnotch.com/tumblr/images/daytime_bg.jpg";
+            }
+            else {
+                document.body.background = "http://itsnotch.com/tumblr/images/nighttime_bg.jpg";
+            }
+        }
 
+
+            if (hrs < 12)
+                greet = 'Good Morning';
+            else if (hrs >= 12 && hrs <= 17)
+                greet = 'Good Afternoon';
+            else if (hrs >= 17 && hrs <= 24)
+                greet = 'Good Evening';
+
+            document.getElementById('lblGreetings').innerHTML =
+                '<b>' + greet + '</b> Player!';
                 
             if(hh > 12){
                 session = "PM";
