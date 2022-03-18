@@ -80,3 +80,32 @@ label .btn {
     background-color: #007bff;
     border-color: #007bff;
 }
+
+.btn-outline-dark {
+    width: 100%;
+    border-radius: 0;
+    border: 1px solid #fff;
+    color: #fff;
+    background-color: transparent;
+    transition: all .3s;
+}
+
+.btn-outline-dark:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.btn-outline-dark:focus {
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.5);
+}
+
+progress[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    color: aqua;
+  
+    width: 250px;
+    height: 20px;
+}
+    

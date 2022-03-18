@@ -97,7 +97,7 @@
         speedupFactor = factor;
     };
 
-    var showUi = true; // set to false by hideUi, in case document ready is triggered after calling hideUi
+    var showUi = false; // set to false by hideUi, in case document ready is triggered after calling hideUi
     if (window.jQuery)
     {
         var $ = window.jQuery;
@@ -177,12 +177,3 @@
 
     window.Date = CustomDate;
 })()
-
-
-
-
-
-
-
-
-

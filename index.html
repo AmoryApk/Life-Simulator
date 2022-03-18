@@ -4,7 +4,7 @@
         <!-- Required meta tags -->
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -16,10 +16,10 @@
 
         <title>UMNLife</title>
         <style>
-            
+
         </style>
     </head>
-    <body>
+    <body id="background">
         <div class="container-fluid" id="mainMenu">
             <nav class="navbar navbar-light bg-light">
                 <div class="cover-container d-flex p-3 mx-auto flex-column">
@@ -72,13 +72,165 @@
                                             Your name will be used to identify you in the game.        
                                         </small>        
                                     </div>        
-                                    <button type="submit" class="btn btn-primary">PLAY</button>        
+                                    <button type="submit" class="btn btn-primary" id="play">PLAY</button>        
                                 </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </main>
+        </div>
+
+        <div class="container-fuid" id="game">
+            <nav class="navbar navbar-light bg-light">
+                <div class="cover-container d-flex p-3 mx-auto flex-column">
+                    <header class="mb-auto">
+                        <div>
+                            <h3 class="float-md-start mb-0">
+                                <i class="fas fa-trophy fa-2x"></i>
+                                Midterm Exam
+                            </h3>
+                        </div>
+                    </header>
+                </div>
+            </nav>
+            
+            <div class="row">
+                <div class="card border-0">
+                    <div class="card-body">
+                        <p class="card-text">
+                            <div class="clock">
+                                <div class="clock-face">
+                                    <div class="hand hour-hand" id="clock"></div>
+                                    <div class="hand minute-hand"></div>
+                                    <div class="hand second-hand"></div>
+                                </div>
+                            </div>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <main class="px-3">
+                <div class="row">
+                    <div class="col-md-6 offset-md-3">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Game</h5>
+                                <p class="card-text">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <i class="fas fa-utensils fa-2x"></i>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="progress">
+                                                        <progress id="foodbar"  value="50"  max="100"></progress>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <i class="fas fa-bed fa-2x"></i>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="progress">
+                                                        <progress id="sleepbar" value="50" max="100"></progress>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <i class="fas fa-gamepad fa-2x"></i>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="progress">
+                                                        <progress class="progress-bar" id="playbar"  value="50" max="100"></progress>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="row">
+                                                <div class="col-md-2">
+                                                    <i class="fas fa-book fa-2x"></i>
+                                                </div>
+                                                <div class="col-md-10">
+                                                    <div class="progress">
+                                                        <progress id="studybar"  value="50" max="100"></progress>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </p>
+                                <p class="card-text text-center font-weight-bold" id="semester"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" id="greeting"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-center" id="character"></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-6 offset-md-3">
+                    <div class="card border-0">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Aktivitas</h5>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="eat()">Makan</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="tidur()">Tidur</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="main()">Main</button>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="row">
+                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="belajar()">Belajar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Optional JavaScript; choose one of the two! -->
@@ -98,17 +250,258 @@
         <!-- My Javascript -->
         <script src="js/script.js"></script>
 
+        <script src="js/clock-speedup.js"></script>
+
         <script>
-            $('form').submit(function(e) {
-                e.preventDefault();
-                var character = $('input[name=character]:checked').val();
-                var name = $('input[name=name]').val();
-                if (character && name) {
-                    localStorage.setItem('character', character);
-                    localStorage.setItem('name', name);
-                    window.location.href = 'game.html';
+
+            $(document).ready(function(){
+                $("#mainMenu").show();
+                $("#game").hide();
+            });
+
+            $("#play").click(function(event){
+                event.preventDefault();
+                var avatar = $("#avatar").val();
+                var name = $("#name").val();
+                if (avatar == "") {
+                    alert("Please choose your avatar!");
+                } else if (name == "") {
+                    alert("Please enter your name!");
+                } else {
+                    $("#mainMenu").hide();
+                    $("#game").show();
+                    $("#progressUtensiils").css("width", "50%");
+                    $("#progressBed").css("width", "50%");
+                    $("#progressGamepad").css("width", "50%");
+                    $("#progressBook").css("width", "0%");
+                    $("#semester").text("Semester 1");
+                    // tampilkan greeting (morning, afternoon, evening, night) dan nama
+                    var greeting = "";
+                    var a_p = "";
+                    var today = new Date();
+                    var curr_hour = today.getHours();
+                    var curr_minute = today.getMinutes();
+                    if (curr_hour < 12) {
+                        a_p = "AM";
+                    } else {
+                        a_p = "PM";
+                    }
+                    if (curr_hour == 0) {
+                        curr_hour = 12;
+                    }
+                    if (curr_hour > 12) {
+                        curr_hour = curr_hour - 12;
+                    }
+                    if (curr_hour < 10) {
+                        curr_hour = "0" + curr_hour;
+                    }
+                    if (curr_minute < 10) {
+                        curr_minute = "0" + curr_minute;
+                    }
+                    var hour = today.getHours();
+                    if (hour >= 5 && hour < 12) {
+                        greeting = "Good Morning, ";
+                        $("#background").css("background-image", "url('images/morning.jpg')");
+                    } else if (hour >= 12 && hour < 15) {
+                        greeting = "Good Afternoon, ";
+                        $("#background").css("background-image", "url('images/afternoon.jpg')");
+                    } else if (hour >= 15 && hour < 18) {
+                        greeting = "Good Evening, ";
+                        $("#background").css("background-image", "url('images/evening.jpg')");
+                    } else {
+                        greeting = "Good Night, ";
+                        $("#background").css("background-image", "url('images/night.jpg')");
+                    }
+                    $("#greeting").text(greeting + name);
+                    $("#character").html("<img src='img/" + avatar + ".png' class='img-fluid' alt='Responsive image'>");
                 }
             });
+
+            window.onbeforeunload = function() {
+                return "Are you sure you want to leave?";
+            };
+
+            window.onunload = function() {
+                alert("You have left the game!");
+            };
+
+            function showTime() {
+                var a_p = "";
+                var today = new Date();
+                var curr_hour = today.getHours();
+                var curr_minute = today.getMinutes();
+                var curr_second = today.getSeconds();
+                if (curr_hour < 12) {
+                    a_p = "AM";
+                } else {
+                    a_p = "PM";
+                }
+                if (curr_hour == 0) {
+                    curr_hour = 12;
+                }
+                if (curr_hour > 12) {
+                    curr_hour = curr_hour - 12;
+                }
+                curr_hour = checkTime(curr_hour);
+                curr_minute = checkTime(curr_minute);
+                curr_second = checkTime(curr_second);
+                document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + " " + a_p;
+                setTimeout(showTime, 500);  
+            }
+            function checkTime(i) {
+                if (i < 10) {
+                    i = "0" + i;
+                }
+                return i;
+            }
+            showTime();
+
+            var food = document.getElementById("foodbar").value;
+            var sleep = document.getElementById("sleepbar").value;
+            var play = document.getElementById("playbar").value;
+            var study = document.getElementById("studybar").value;
+
+
+            function eat() {
+                if (food <= 90) {
+                    food += 10;
+                    
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                } else {
+                    alert("You reached the maximum length of the progressbar!")
+                }
+            }
+            function belajar() {
+                if (study <= 90) {
+                    study += 10;               
+                    document.getElementById("studybar").value = study;
+                }else if (study > 0 && study < 10) {
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                }  if (food > 0) {
+                    food -= 2.5;
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }  if (play > 0) {
+                    play -= 5;
+                    document.getElementById("playbar").value = play;
+                } else if (play > 0 && play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                } if (sleep > 0){
+                    sleep -= 5;
+                    document.getElementById("sleepbar").value = sleep;
+                } else if (sleep > 0 && sleep < 10){
+                    sleep == 0;
+                    document.getElementById("sleepbar").value = sleep;
+                }
+              }
+
+
+            function tidur() {
+                if (sleep <= 90) {
+                    sleep += 10;
+                    document.getElementById("sleepbar").value = sleep;
+                }else if (sleep > 0 && sleep < 10) {
+                    sleep == 0;
+                    document.getElementById("sleepbar").value == sleep;
+                }   if (food > 0) {
+                    food -= 5;
+                    document.getElementById("foodbar").value = food;
+                }else if (food > 0 && food < 10){
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }   if (play > 0){
+                    play -= 5;
+                    document.getElementById("playbar").value = play;
+                } else if (play > 0 && play < 10){
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                } if(study <= 90) {
+                    study -= 5;
+                    document.getElementById("studybar").value = study;
+                } else if (study > 0 && study < 10){
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                }
+            }
+
+
+            function main() {
+                if (play <= 90) {
+                    play += 10;               
+                    document.getElementById("playbar").value = play;
+                }else if (play > 0 && play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                }  if (food > 0) {
+                    food -= 5;
+                    document.getElementById("foodbar").value = food;
+                } else if (food > 0 && food < 10) {
+                    food == 0;
+                    document.getElementById("foodbar").value == food;
+                }  if (study > 0) {
+                    study -= 5;
+                    document.getElementById("studybar").value = study;
+                } else if (study > 0 && study < 10) {
+                    study == 0;
+                    document.getElementById("studybar").value == study;
+                } if (sleep > 0){
+                    sleep -= 5;
+                    document.getElementById("sleepbar").value = sleep;
+                } else if (sleep > 0 && sleep < 10){
+                    sleep == 0;
+                    document.getElementById("sleepbar").value = sleep;
+                }
+            }
+
+            let timer, currSeconds = 0;
+  
+            function resetTimer() {
+                clearInterval(timer);
+    
+                /* Reset the seconds of the timer */
+                currSeconds = 0;
+    
+                /* Set a new interval */
+                timer = 
+                    setInterval(startIdleTimer, 1000);
+            }
+            window.onload = resetTimer;
+            window.onmousemove = resetTimer;
+            window.onmousedown = resetTimer;
+            window.ontouchstart = resetTimer;
+            window.onclick = resetTimer;
+            window.onkeypress = resetTimer;
+
+            function startIdleTimer() {
+                
+                /* Increment the
+                    timer seconds */
+                currSeconds++;
+                if (currSeconds % 10 == 0){
+                    play -= 2;               
+                    document.getElementById("playbar").value = play;
+                } else if (play < 10) {
+                    play == 0;
+                    document.getElementById("playbar").value == play;
+                }
+                /* Set the timer text
+                    to the new value */
+                document.querySelector(".secs")
+                    .textContent = currSeconds;
+    
+                /* Display the timer text */
+                document.querySelector(".timertext")
+                    .style.display = 'block';
+            }
+
+
         </script>
     </body>
 </html>

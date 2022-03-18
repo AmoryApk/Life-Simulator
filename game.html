@@ -1,10 +1,14 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html>
     <head>
-        <!-- Required meta tags -->
+        <link rel="stylesheet" href="style.css"/>
+        <div class="header">
+            <h1>Mid Exam</h1>
+        <img width="100" src="assets/trophy.jpg"/>
+        </div>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+        
         <!-- Bootstrap CSS -->
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -15,353 +19,50 @@
         <link rel="stylesheet" href="css/style.css">
 
         <title>UMNLife</title>
-        <style>
-
-        </style>
     </head>
-    <body id="background">
-        <div class="container-fluid" id="mainMenu">
-            <nav class="navbar navbar-light bg-light">
-                <div class="cover-container d-flex p-3 mx-auto flex-column">
-                    <header class="mb-auto">
-                        <div>
-                            <h3 class="float-md-start mb-0">
-                                <i class="fas fa-trophy fa-2x"></i>
-                                Midterm Exam
-                            </h3>
-                        </div>
-                    </header>
-                </div>
-            </nav>
-
-            <main class="px-3">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Main Menu</h5>
-                                <p class="card-text">
-                                    Choose your avatar and enter your name.
-                                </p>
-                                <form>                                    
-                                    <div class="form-group">        
-                                        <label for="character">Character</label>        
-                                        <div class="btn-group btn-group-toggle" data-toggle="buttons">        
-                                            <label class="btn btn-secondary">        
-                                                <input type="radio" name="character" id="option1" autocomplete="off" value="1">        
-                                                <i class="fas fa-user"></i>        
-                                            </label>        
-                                            <label class="btn btn-secondary">        
-                                                <input type="radio" name="character" id="option2" autocomplete="off" value="2">        
-                                                <i class="fas fa-user-tie"></i>        
-                                            </label>        
-                                            <label class="btn btn-secondary">        
-                                                <input type="radio" name="character" id="option3" autocomplete="off" value="3">        
-                                                <i class="fas fa-user-graduate"></i>        
-                                            </label>        
-                                            <label class="btn btn-secondary">        
-                                                <input type="radio" name="character" id="option4" autocomplete="off" value="4">        
-                                                <i class="fas fa-user-ninja"></i>        
-                                            </label>        
-                                        </div>        
-                                    </div>        
-                                    <div class="form-group">        
-                                        <label for="name">Name</label>        
-                                        <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Enter your name">        
-                                        <small id="nameHelp" class="form-text text-muted">        
-                                            Your name will be used to identify you in the game.        
-                                        </small>        
-                                    </div>        
-                                    <button type="submit" class="btn btn-primary" id="play">PLAY</button>        
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-        </div>
-
-        <div class="container-fuid" id="game">
-            <nav class="navbar navbar-light bg-light">
-                <div class="cover-container d-flex p-3 mx-auto flex-column">
-                    <header class="mb-auto">
-                        <div>
-                            <h3 class="float-md-start mb-0">
-                                <i class="fas fa-trophy fa-2x"></i>
-                                Midterm Exam
-                            </h3>
-                        </div>
-                    </header>
-                </div>
-            </nav>
-            
-            <div class="row">
-                <div class="card border-0">
-                    <div class="card-body">
-                        <p class="card-text">
-                            <div class="clock">
-                                <div class="clock-face">
-                                    <div class="hand hour-hand" id="clock"></div>
-                                    <div class="hand minute-hand"></div>
-                                    <div class="hand second-hand"></div>
-                                </div>
-                            </div>
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <main class="px-3">
-                <div class="row">
-                    <div class="col-md-6 offset-md-3">
-                        <div class="card">
-                            <div class="card-body">
-                                <h5 class="card-title">Game</h5>
-                                <p class="card-text">
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fas fa-utensils fa-2x"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="progress">
-                                                        <progress id="foodbar"  value="50"  max="100"></progress>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fas fa-bed fa-2x"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="progress">
-                                                        <progress id="sleepbar" value="50" max="100"></progress>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fas fa-gamepad fa-2x"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="progress">
-                                                        <progress class="progress-bar" id="playbar"  value="50" max="100"></progress>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <div class="row">
-                                                <div class="col-md-2">
-                                                    <i class="fas fa-book fa-2x"></i>
-                                                </div>
-                                                <div class="col-md-10">
-                                                    <div class="progress">
-                                                        <progress id="studybar"  value="50" max="100"></progress>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </p>
-                                <p class="card-text text-center font-weight-bold" id="semester"></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </main>
-
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card border-0">
-                        <div class="card-body">
-                            <h5 class="card-title text-center" id="greeting"></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card border-0">
-                        <div class="card-body">
-                            <h5 class="card-title text-center" id="character"></h5>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="col-md-6 offset-md-3">
-                    <div class="card border-0">
-                        <div class="card-body">
-                            <h5 class="card-title text-center">Aktivitas</h5>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="eat()">Makan</button>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="tidur()">Tidur</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="main()">Main</button>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="row">
-                                        <button type="button" class="btn btn-outline-dark btn-lg" onclick="belajar()">Belajar</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Optional JavaScript; choose one of the two! -->
-
-        <!-- Option 1: Bootstrap Bundle with Popper -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-
-        <!-- Option 2: Separate Popper and Bootstrap JS -->
-        <!--
-        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
-        -->
-
-        <!-- Option 3: jQuery -->
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <body onload="Clock();">
+        <div id="character">
+            <h1>Character info</h1>
+            <progress id="foodbar"  value="50"  max="100"></progress>  Food<br>
+            <progress id="playbar"  value="50" max="100"></progress>  Play<br>
+            <progress id="studybar"  value="50" max="100"></progress>  Study<br>
+            <progress id="sleepbar" value="50" max="100"></progress>Sleep</progress><br>
         
-        <!-- My Javascript -->
-        <script src="js/script.js"></script>
+            <menu id="action">
+                <h1>Actions</h1>
+                <button class="btn btn-primary" onclick="eat();">Makan</button>
+                <div id="foodshow"></div>
+                <button class="btn btn-primary" onclick="main();">Main</button>
+                <div id="playshow"></div>
+                <button class="btn btn-primary" onclick="tidur();">Tidur</button>
+                <div id="sleepshow"></div>
+                <button class="btn btn-primary" onclick="belajar();">Belajar</button>
+                <div id="studyshow"></div>
+            </menu>
+        </div>
+        <p class="timertext" 
+        style="font-size: 1.5rem;">
+        You are idle for
+        <span class="secs"></span> seconds.
+        </p>
 
-        <script src="js/clock-speedup.js"></script>
+        <ul id="recent-times"></ul>
+        <span id="FastClock"></span>
+        
 
         <script>
-
-            $(document).ready(function(){
-                $("#mainMenu").show();
-                $("#game").hide();
-            });
-
-            $("#play").click(function(event){
-                event.preventDefault();
-                var avatar = $("#avatar").val();
-                var name = $("#name").val();
-                if (avatar == "") {
-                    alert("Please choose your avatar!");
-                } else if (name == "") {
-                    alert("Please enter your name!");
-                } else {
-                    $("#mainMenu").hide();
-                    $("#game").show();
-                    $("#progressUtensiils").css("width", "50%");
-                    $("#progressBed").css("width", "50%");
-                    $("#progressGamepad").css("width", "50%");
-                    $("#progressBook").css("width", "0%");
-                    $("#semester").text("Semester 1");
-                    // tampilkan greeting (morning, afternoon, evening, night) dan nama
-                    var greeting = "";
-                    var a_p = "";
-                    var today = new Date();
-                    var curr_hour = today.getHours();
-                    var curr_minute = today.getMinutes();
-                    if (curr_hour < 12) {
-                        a_p = "AM";
-                    } else {
-                        a_p = "PM";
-                    }
-                    if (curr_hour == 0) {
-                        curr_hour = 12;
-                    }
-                    if (curr_hour > 12) {
-                        curr_hour = curr_hour - 12;
-                    }
-                    if (curr_hour < 10) {
-                        curr_hour = "0" + curr_hour;
-                    }
-                    if (curr_minute < 10) {
-                        curr_minute = "0" + curr_minute;
-                    }
-                    var hour = today.getHours();
-                    if (hour >= 5 && hour < 12) {
-                        greeting = "Good Morning, ";
-                        $("#background").css("background-image", "url('images/morning.jpg')");
-                    } else if (hour >= 12 && hour < 15) {
-                        greeting = "Good Afternoon, ";
-                        $("#background").css("background-image", "url('images/afternoon.jpg')");
-                    } else if (hour >= 15 && hour < 18) {
-                        greeting = "Good Evening, ";
-                        $("#background").css("background-image", "url('images/evening.jpg')");
-                    } else {
-                        greeting = "Good Night, ";
-                        $("#background").css("background-image", "url('images/night.jpg')");
-                    }
-                    $("#greeting").text(greeting + name);
-                    $("#character").html("<img src='img/" + avatar + ".png' class='img-fluid' alt='Responsive image'>");
-                }
-            });
-
-            window.onbeforeunload = function() {
-                return "Are you sure you want to leave?";
-            };
-
-            window.onunload = function() {
-                alert("You have left the game!");
-            };
-
-            function showTime() {
-                var a_p = "";
-                var today = new Date();
-                var curr_hour = today.getHours();
-                var curr_minute = today.getMinutes();
-                var curr_second = today.getSeconds();
-                if (curr_hour < 12) {
-                    a_p = "AM";
-                } else {
-                    a_p = "PM";
-                }
-                if (curr_hour == 0) {
-                    curr_hour = 12;
-                }
-                if (curr_hour > 12) {
-                    curr_hour = curr_hour - 12;
-                }
-                curr_hour = checkTime(curr_hour);
-                curr_minute = checkTime(curr_minute);
-                curr_second = checkTime(curr_second);
-                document.getElementById('clock').innerHTML=curr_hour + ":" + curr_minute + " " + a_p;
-                setTimeout(showTime, 500);  
-            }
-            function checkTime(i) {
-                if (i < 10) {
-                    i = "0" + i;
-                }
-                return i;
-            }
-            showTime();
+            setInterval(function(){
+                var li = $('<li>').text(new Date().toString());
+                $("#recent-times")
+                    .append(li);
+            },1000);
 
             var food = document.getElementById("foodbar").value;
             var sleep = document.getElementById("sleepbar").value;
             var play = document.getElementById("playbar").value;
             var study = document.getElementById("studybar").value;
 
-
+            
             function eat() {
                 if (food <= 90) {
                     food += 10;
@@ -374,6 +75,7 @@
                     alert("You reached the maximum length of the progressbar!")
                 }
             }
+
             function belajar() {
                 if (study <= 90) {
                     study += 10;               
@@ -382,7 +84,7 @@
                     study == 0;
                     document.getElementById("studybar").value == study;
                 }  if (food > 0) {
-                    food -= 2.5;
+                    food -= 5;
                     document.getElementById("foodbar").value = food;
                 } else if (food > 0 && food < 10) {
                     food == 0;
@@ -459,10 +161,17 @@
                     document.getElementById("sleepbar").value = sleep;
                 }
             }
-
+            
+           
             let timer, currSeconds = 0;
   
             function resetTimer() {
+    
+                /* Hide the timer text */
+                document.querySelector(".timertext")
+                        .style.display = 'none';
+    
+                /* Clear the previous interval */
                 clearInterval(timer);
     
                 /* Reset the seconds of the timer */
@@ -470,15 +179,18 @@
     
                 /* Set a new interval */
                 timer = 
-                    setInterval(startIdleTimer, 1000);
+                    setInterval(startIdleTimer, 5000);
             }
+    
+            // Define the events that
+            // would reset the timer
             window.onload = resetTimer;
             window.onmousemove = resetTimer;
             window.onmousedown = resetTimer;
             window.ontouchstart = resetTimer;
             window.onclick = resetTimer;
             window.onkeypress = resetTimer;
-
+    
             function startIdleTimer() {
                 
                 /* Increment the
@@ -500,8 +212,20 @@
                 document.querySelector(".timertext")
                     .style.display = 'block';
             }
+            
 
-
+            var mydate = new Date();
+            var mydate_millisec = mydate.getTime();
+            var offset = 12 * 1000; // 12 times faster
+        //    var offset = 3600 * 1000; // one hour in one secund
+            function Clock() {
+                NextOne();
+                setInterval("NextOne()",1000);
+            }
+            function NextOne() {
+                document.getElementById("FastClock").innerHTML = new Date(mydate_millisec).toString();
+                mydate_millisec += offset;
+            }
         </script>
     </body>
 </html>
