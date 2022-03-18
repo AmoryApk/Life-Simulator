@@ -105,7 +105,7 @@ progress[value] {
     appearance: none;
     color: aqua;
   
-    width: 250px;
+    width: 300px;
     height: 20px;
 }
 progress::-webkit-progress-bar {
