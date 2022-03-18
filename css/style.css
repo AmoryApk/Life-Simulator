@@ -108,4 +108,11 @@ progress[value] {
     width: 250px;
     height: 20px;
 }
-    
+progress::-webkit-progress-bar {
+	background: lightgray;
+}
+
+progress::-webkit-progress-value {
+	background: #06c;
+	transition: width 1s ease-in-out;
+}
